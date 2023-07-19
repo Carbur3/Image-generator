@@ -13,7 +13,20 @@ const getImage = async function () {
 
 const selectRandomImage = function (images) {
     const randomIndex = Math.floor(Math.random() * images.length);
-    console.log(randomIndex);
-}
+    const randomImage = images[randomIndex];
+    //console.log(randomIndex);
+    //console.log(randomImage);
+    displayImage(randomImage);
+};
 
-getImage();
+const displayImage = function (randomImage) {
+    const author = randomImage.author;
+    const ImageAddress = randomImage.download_url;
+    authorSpan.innerText = author;
+    img.src = ImageAddress;
+    imgDiv.classList.remove("hide");
+};
+
+button.addEventListener("click", function () {
+    getImage();
+});
