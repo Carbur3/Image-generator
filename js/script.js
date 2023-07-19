@@ -8,11 +8,12 @@ const getImage = async function () {
     const images = await res.json();
     selectRandomImage(images);
 
-    console.log(images);
+    //console.log(images);
 };
 
 const selectRandomImage = function (images) {
     const randomIndex = Math.floor(Math.random() * images.length);
+    console.log(randomIndex);
 }
 
 getImage();
